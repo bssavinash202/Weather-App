@@ -50,17 +50,19 @@ function getForecastDetails(res) {
         let col=`
         <div class="col-3 box2">
        <h6>${ind>12?ind-12:ind}:00 ${ind<12?"AM":"PM"}</h6>
-       <div style="width:"50px"><img src="${obj.condition.icon}" width="100%"></div>
+       <div style="width:"50px"><img src="${obj.condition.icon}" width="40%"></div>
        <p>${obj.condition.text}</p>
+      
        <h2>${obj.temp_c}<sup> o</sup>C</h2>
-        </div>`
+        </div>
+        `
         cols+=col;
     }
         return cols
     },"")
     // console.log(columns)
     forecastEle.innerHTML=`
-    
+    <h1 class="text-center"> Today's Forecast </h1>
 ${columns}
 
     `
@@ -68,13 +70,13 @@ ${columns}
 function airQuality(res){
     let air = res.data.current.air_quality
     document.getElementById("airId").innerHTML=`
-     <h1 class="text-center text-light mt-5 mb-3">Air Quality</h1>
+     <h1 class="text-center text-dark mt-5 mb-5">Air Quality</h1>
       <div class="box2">
-       <h3>Co : ${air.co}</h3>
-        <h3>no2 : ${air.no2}</h3>
-       <h3>o3 : ${air.o3}</h3>
-       <h3>so2 : ${air.so2}</h3>
-       <h3>pm2 : ${air.pm2_5}</h3>
+       <h3 class="x">Co : ${air.co}</h3>
+        <h3 class="x">no2 : ${air.no2}</h3>
+       <h3 class="x">o3 : ${air.o3}</h3>
+       <h3 class="x">so2 : ${air.so2}</h3>
+       <h3 class="x">pm2 : ${air.pm2_5}</h3>
     </div>
     
     `
@@ -86,10 +88,11 @@ function foreCast(res){
     let resultval= fr.reduce((acc,obj) => {
         console.log(obj.day.avgtemp_c)
        let tr = `
-      <div class="center2 gap-4">
-       <h6>${obj.date}</h6>
-         <img src="${obj.day.condition.icon}" width="150px">
+      <div class="z">
+       <h5>${obj.date}</h5>
+         <img src="${obj.day.condition.icon}" width="150px class="bg-secondary">
         <h2>${obj.day.avgtemp_c}<sup> o</sup>C</h2>
+         <p>${obj.day.condition.text}</p>
         </div>
        `
       acc+=tr
@@ -97,7 +100,7 @@ function foreCast(res){
     },'');
     console.log(resultval)
     document.getElementById('foreId').innerHTML=`
-     <h1 class="text-center text-light mt-5 mb-3">Future Forecast</h1>
+     <h1 class="text-center text-dark mt-5 mb-3">Future Forecast</h1>
       <div class="center2">
       ${resultval}
     </div>

@@ -1,3 +1,28 @@
+body{
+    background: url('./assets/ethereal-natural-environment.jpg');
+    background-position: fixed;
+    background-size: cover;
+   
+}
+input.form-control{
+    color: #000000 !important;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+}
+input.form-control:focus{
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid black;
+}
+input.form-control::placeholder{
+    padding-bottom: 5px;
+    color: #000000 !important;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background-color: transparent;
+}
 .center{
     display: flex;
     justify-content: center;
@@ -10,23 +35,62 @@
     margin-left: -150px;
 }
 .mute{
-    color: rgb(118, 117, 117);
+    color: rgb(40, 40, 40);
 }
 
 .box{
     border-radius: 20px;
 }
+.logo{
+
+    text-align: center;
+    font-size: 70px;
+    background: -webkit-linear-gradient(10deg,#38484851,#f66803);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+button.btn{
+    background-color: #f668037c;
+}
+button.btn:hover{
+    background-color: #607c7c51;
+    color: #000000;
+}
 .box2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 3rem; 
-    justify-items: center; 
-    border-radius: 10px;
-}
-.center2, .center1 {
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 1px 0 5px rgb(0, 0, 0);
+    gap: 1rem; 
+    justify-content: center; 
     text-align: center;
     border-radius: 20px;
+    background-color: #ffffff1f;
+    box-shadow: 1px 0 7px rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+.center2{
+    padding: 10px;
+    /* border-radius: 8px; */
+    box-shadow: 1px 0 7px rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 20px;
+    background-color: #ffffff1f;
+}
+.c{
+    box-shadow: 1px 0 7px rgb(0, 0, 0);
+    background-color: #ffffff1f; 
+    border-radius: 20px;
+    padding: 10px;
+}
+.x{
+    /* box-shadow: 1px 0 5px rgb(0, 0, 0); */
+    /* background-color: #ffffff2f;  */
+    border-radius: 20px;
+    padding: 20px;
+}
+.box3{
+    background-color: black;
+}
+.z{
+    padding: 10px;
 }
