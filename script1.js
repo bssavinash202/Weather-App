@@ -7,7 +7,7 @@ async function getData() {
         alert("please enter the city")
         return;
     }
-    // let API=`http://api.weatherapi.com/v1/history.json?key=${Key}&q=${city}&dt=2025-03-17&end_dt=2025-03-24`;
+    // let API=`https://api.weatherapi.com/v1/history.json?key=${Key}&q=${city}&dt=2025-03-17&end_dt=2025-03-24`;
     let API = `https://api.weatherapi.com/v1/forecast.json?key=${Key}&q=${city}&aqi=yes&days=7`
     // let res = await axios.get(API);
     let res = axios.get(API);
